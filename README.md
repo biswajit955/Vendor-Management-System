@@ -10,19 +10,13 @@ This is a Vendor Management System developed using Django and Django REST Framew
     git clone https://github.com/biswajit955/Vendor-Management-System.git
     ```
 
-2. Navigate to the project directory:
-
-    ```bash
-    cd vendor-management-system
-    ```
-
-3. Install dependencies:
+2. Install dependencies:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Run the development server:
+3. Run the development server:
 
     ```bash
     python manage.py runserver
@@ -37,81 +31,179 @@ If You Needed Django Admin `http://127.0.0.1:8000/admin/`.
 
 ## API Endpoints
 
+## Authentication Endpoints
+
+### Obtain Token
+
+- **Endpoint:** `/api/token/`
+- **Method:** `POST`
+- **Payload:**
+    ```json
+    {
+        "username": "your_username",
+        "password": "your_password"
+    }
+    ```
+- **Response:**
+    ```json
+    {
+        "token": "your_access_token",
+        "user_id": "your_user_id",
+        "username": "your_username"
+    }
+    ```
+
+### Logout
+
+- **Endpoint:** `/api/logout/`
+- **Method:** `POST`
+- **Headers:**
+    ```
+    Authorization: Token your_access_token
+    ```
+- **Response:**
+    ```json
+    {
+        "detail": "Successfully logged out."
+    }
+    ```
+
+### Signup
+
+- **Endpoint:** `/api/signup/`
+- **Method:** `POST`
+- **Payload:**
+    ```json
+    {
+        "username": "new_username",
+        "password": "new_password"
+    }
+    ```
+- **Response:**
+    ```json
+    {
+        "token": "new_access_token",
+        "user_id": "new_user_id",
+        "username": "new_username"
+    }
+    ```
+
+
 ### Vendor Endpoints
 
 - **List all vendors:**
 
-    ```http
-    GET /api/vendors/
+    - **Endpoint:** `/api/vendors/`
+    - **Method:** `GET`
+    - **Headers:**
     ```
+    Authorization: Token "your_access_token"
+    ```
+
 
 - **Create a new vendor:**
 
-    ```http
-    POST /api/vendors/
+    - **Endpoint:** `/api/vendors/`
+    - **Method:** `POST`
+    - **Headers:**
     ```
+    Authorization: Token "your_access_token"
+    ```
+
 
 - **Retrieve a specific vendor's details:**
 
-    ```http
-    GET /api/vendors/{vendor_id}/
+    - **Endpoint:** `/api/vendors/{vendor_id}/`
+    - **Method:** `GET`
+    - **Headers:**
     ```
+    Authorization: Token "your_access_token"
+    ```
+
 
 - **Update a vendor's details:**
 
-    ```http
-    PUT /api/vendors/{vendor_id}/
+    - **Endpoint:** `/api/vendors/{vendor_id}/`
+    - **Method:** `PUT`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 - **Delete a vendor:**
 
-    ```http
-    DELETE /api/vendors/{vendor_id}/
+    - **Endpoint:** `/api/vendors/{vendor_id}/`
+    - **Method:** `DELETE`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 - **Retrieve calculated performance metrics for a specific vendor:**
 
-    ```http
-    GET /api/vendors/{vendor_id}/performance/
+    - **Endpoint:** `/api/vendors/{vendor_id}/performance/`
+    - **Method:** `GET`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 ### Purchase Order Endpoints
 
 - **List all purchase orders:**
 
-    ```http
-    GET /api/purchase_orders/
+    - **Endpoint:** `/api/purchase_orders/`
+    - **Method:** `GET`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 - **Create a new purchase order:**
 
-    ```http
-    POST /api/purchase_orders/
+    - **Endpoint:** `/api/purchase_orders/`
+    - **Method:** `POST`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 - **Retrieve details of a specific purchase order:**
 
-    ```http
-    GET /api/purchase_orders/{po_id}/
+    - **Endpoint:** `/api/purchase_orders/{po_id}/`
+    - **Method:** `GET`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 - **Update a purchase order:**
 
-    ```http
-    PUT /api/purchase_orders/{po_id}/
+    - **Endpoint:** `/api/purchase_orders/{po_id}/`
+    - **Method:** `PUT`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 - **Delete a purchase order:**
 
-    ```http
-    DELETE /api/purchase_orders/{po_id}/
+    - **Endpoint:** `/api/purchase_orders/{po_id}/`
+    - **Method:** `DELETE`
+    - **Headers:**
+    ```
+    Authorization: Token "your_access_token"
     ```
 
 - **Acknowledge a purchase order (update acknowledgment_date):**
 
-    ```http
-    POST /api/purchase_orders/{po_id}/acknowledge/
+    - **Endpoint:** `/api/purchase_orders/{po_id}/acknowledge/`
+    - **Method:** `POST`
+    - **Headers:**
     ```
+    Authorization: Token "your_access_token"
+    ```
+
 
 ## Additional Notes
 
