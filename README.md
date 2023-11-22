@@ -115,6 +115,14 @@ If You Needed Django Admin `http://127.0.0.1:8000/admin/`.
 
 ## Additional Notes
 
+- **Initial Database State:**
+    - In the `Vendor` model, IDs 2-4 exist.
+    - In the `PurchaseOrder` model, data with IDs 1-8 is available.
+    - When you are working with URLs like `/api/purchase_orders/{po_id}/` or `/api/vendors/{vendor_id}/`, you may need these IDs.
+    - If you have any doubts about the database, you can check the Django admin interface at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
+      - **Username:** admin
+      - **Password:** 1
+
 - Make sure to handle authentication and authorization according to your requirements.
 - Update the models, views, and serializers as per your specific business logic.
 
