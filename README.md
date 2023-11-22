@@ -30,11 +30,8 @@ This is a Vendor Management System developed using Django and Django REST Framew
 
 The API will be accessible at `http://127.0.0.1:8000/`. You can explore the API using tools like `curl`, `httpie`, or Postman.
 
-5. If You Needed Django Admin:
+If You Needed Django Admin `http://127.0.0.1:8000/admin/`.
 
-    ```bash
-    python manage.py admin
-    ```
     - **username:** admin
     - **Password:** 1
 
