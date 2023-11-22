@@ -7,7 +7,7 @@ This is a Vendor Management System developed using Django and Django REST Framew
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/vendor-management-system.git
+    git clone https://github.com/biswajit955/Vendor-Management-System.git
     ```
 
 2. Navigate to the project directory:
@@ -22,19 +22,21 @@ This is a Vendor Management System developed using Django and Django REST Framew
     pip install -r requirements.txt
     ```
 
-4. Apply database migrations:
-
-    ```bash
-    python manage.py migrate
-    ```
-
-5. Run the development server:
+4. Run the development server:
 
     ```bash
     python manage.py runserver
     ```
 
 The API will be accessible at `http://127.0.0.1:8000/`. You can explore the API using tools like `curl`, `httpie`, or Postman.
+
+5. If You Needed Django Admin:
+
+    ```bash
+    python manage.py admin
+    ```
+    - **username:** admin
+    - **Password:** 1
 
 ## API Endpoints
 
